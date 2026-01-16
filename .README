@@ -1,0 +1,84 @@
+Currency Exchange Application
+Personal & Business Currency Exchange Platform by Jason Izuchukwu
+
+
+Project Overview
+A Windows Forms application built in C# for secure and efficient currency transfers between personal and business accounts. The system supports multi-currency transactions, scheduled transfers, invoice generation, and administrative oversight.
+
+Target Users
+
+Personal User:	Transfers funds between currency accounts, views exchange rates, tops up balances.
+Business User:	Inherits personal features + can schedule transactions, generate invoices, and has higher transfer limits.
+System Admin:	Manages user accounts, monitors transactions, unblocks suspended accounts.
+
+
+Key Features
+
+Personal User
+-Create and manage multi-currency accounts
+-Transfer funds between own accounts or to external beneficiaries
+-View real-time global exchange rates
+-Top-up currency accounts from UK bank accounts
+
+Business User
+
+-All personal user features
+-Schedule future-dated transactions
+-Generate invoices for completed transfers
+-Higher transfer limits
+
+System Admin
+-View all user accounts and transactions
+-Delete or unblock user accounts
+-Monitor flagged/suspended transactions
+
+
+Database Schema
+The application uses a SQLite database with the following core tables:
+
+Users – User account details
+Currency_Acc – Currency accounts linked to users
+Currency – Supported currencies and exchange rates
+Transaction – Records of all transfers
+Beneficiary – External bank account details
+
+🛠️ Development Stack
+Frontend: Windows Forms (C#)
+Backend: .NET Framework
+Database: SQLite with WAL (Write-Ahead Logging) mode
+IDE: Visual Studio
+Version Control: Git (optional, recommended)
+
+🔧 Setup & Installation
+Prerequisites
+Visual Studio 2019 or later
+
+.NET Framework 4.7.2+
+
+SQLite (included via NuGet)
+
+Steps
+-Clone or download the project.
+-Open CurrencyExchange.sln in Visual Studio.
+-Restore NuGet packages (SQLite, etc.).
+-Ensure the SQLite database file is in the Database/ folder.
+-Update the connection string in DatabaseConfig.cs if needed.
+-Build and run the project.
+Known Issues & Improvements
+
+Security
+-Passwords are stored in plaintext (should be hashed in production).
+-No encryption for sensitive data in transit.
+
+Accessibility
+-No keyboard navigation support.
+-Lacks screen reader compatibility.
+
+Functional
+-Limited to 11 hardcoded currencies.
+-Some edge-case error handling missing.
+
+Legal & Ethical Considerations
+-GDPR Compliance: User data must be encrypted; plaintext storage is non-compliant.
+-Anti-Money Laundering: Transfer caps and transaction flagging help deter misuse.
+-Accessibility: Ignoring accessibility excludes users with disabilities and may lead to legal risks (e.g., Domino’s Pizza case, 2019).
